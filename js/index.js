@@ -26,9 +26,9 @@
     
     function barCode(type,val,options){
         if(type===1002){
-            jsBarcodes(val);
+            return jsBarcodes(val);
         }else{
-            qRiouss(val,options);
+           return qRiouss(val,options);
         }
     }
 
