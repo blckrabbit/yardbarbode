@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             static_mappings:{
                 files:[{
-                    src:'js/index.js',
+                    src:'src/temp.js',
                     dest:'build/index.min.js'
                 }]
             }
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/index.js': 'dest/index.js'
+                    'src/temp.js': 'dest/index.js'
                 }
             }
         },
@@ -36,14 +36,14 @@ module.exports = function(grunt) {
             }
         },
         watch:{//自动监听任务
-            files:['js/*.js'],
+            files:['src/temp.js'],
             tasks:['uglify','concat']
         },
         jshint:{//检查js的错误
             options: {
                 newcap:false
             },
-            files: ['Gruntfile.js', 'js/*.js'],
+            files: ['Gruntfile.js', 'src/temp.js'],
         }
     });
     //加载包含“uglify"任务插件
@@ -54,5 +54,5 @@ module.exports = function(grunt) {
      grunt.loadNpmTasks('grunt-babel');
 
     //默认被执行的任务列表
-    grunt.registerTask('default', ['jshint','uglify','babel','concat','watch']);
+    grunt.registerTask('default', ['jshint','babel','concat','watch']);
 };
