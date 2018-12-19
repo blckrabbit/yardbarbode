@@ -1,6 +1,6 @@
 {
-  "name": "yardbarbode",
-  "version": "2.2.4",
+  "name": "yardbarcode",
+  "version": "2.2.5",
   "description": "",
   "main": "index.js",
   "scripts": {
