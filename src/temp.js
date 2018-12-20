@@ -34,8 +34,13 @@
 
     function jsBarcodes(val,options){
         var canvas = document.createElement("canvas");
-        JsBarcode(canvas, val,options); //"CODE39"
-        return canvas.toDataURL("image/jpeg");
+        try{
+            JsBarcode(canvas, val,options); //"CODE39"
+            return canvas.toDataURL("image/jpeg");
+        }catch(err){
+            JsBarcode(canvas, val); //"CODE39"
+            return canvas.toDataURL("image/jpeg");
+        }
     }
 
     function qRiouss(val,options){
