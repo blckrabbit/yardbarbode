@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             static_mappings:{
                 files:[{
-                    src:'src/temp.js',
+                    src:'src/index.js',
                     dest:'build/index.min.js'
                 }]
             }
@@ -25,25 +25,25 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'src/temp.js': 'dest/index.js'
+                    'src/index.js': 'dest/index.js'
                 }
             }
         },
         concat:{//合并js配置
             bar:{
                 src:['build/*.js'],
-                dest:'dest/all.min.js'
+                dest:'dest/yardcode.min.js'
             }
         },
         watch:{//自动监听任务
-            files:['src/temp.js'],
+            files:['src/index.js'],
             tasks:['uglify','concat']
         },
         jshint:{//检查js的错误
             options: {
                 newcap:false
             },
-            files: ['Gruntfile.js', 'src/temp.js'],
+            files: ['Gruntfile.js', 'src/index.js'],
         }
     });
     //加载包含“uglify"任务插件
