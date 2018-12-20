@@ -1,6 +1,6 @@
 {
   "name": "yardbarcode",
-  "version": "2.2.9",
+  "version": "2.3.2",
   "description": "",
   "main": "src/yardcode.js",
   "scripts": {

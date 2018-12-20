@@ -26,27 +26,22 @@
     
     function barCode(type,val,options){
         if(type===1002){
-            return jsBarcodes(val);
+            return jsBarcodes(val,options);
         }else{
            return qRiouss(val,options);
         }
     }
 
-    function jsBarcodes(val){
+    function jsBarcodes(val,options){
         var canvas = document.createElement("canvas");
-        JsBarcode(canvas, val, {format: "CODE39"});
-        return canvas.toDataURL("image/png");
+        JsBarcode(canvas, val,options); //"CODE39"
+        return canvas.toDataURL("image/jpeg");
     }
 
     function qRiouss(val,options){
-        var obj = Object.assign({value: val},options?options:{
-            background:background,
-            backgroundAlpha: 0.8,
-            foreground: foreground,
-            foregroundAlpha: 0.8,
+        var obj = Object.assign({value: val},options ? options:{
             level: 'H',
-            padding: padding,
-            size: size,
+            size: 200,
         });
        return new QRious(obj).toDataURL('image/jpeg');
     }

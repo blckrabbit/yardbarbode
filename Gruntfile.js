@@ -54,5 +54,5 @@ module.exports = function(grunt) {
      grunt.loadNpmTasks('grunt-babel');
 
     //默认被执行的任务列表
-    grunt.registerTask('default', ['jshint','babel','concat','watch']);
+    grunt.registerTask('default', ['jshint','uglify','babel','concat','watch']);
 };
